@@ -8,7 +8,7 @@ import { ForecastResponse } from 'src/app/interfaces/ForecastResponse';
 })
 export class ForecastApiService implements OnDestroy{
   KEY = '07b12315c34a46478dc151446231906';
-  API_URL = `http://api.weatherapi.com/v1/current.json?key=${this.KEY}`;
+  API_URL = `https://api.weatherapi.com/v1/current.json?key=${this.KEY}`;
   forecast$!: BehaviorSubject<ForecastResponse>;
   openCityForm: boolean = false;
 
