@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./dropdown.component.scss']
 })
 export class DropdownComponent {
+  @Input() cities: string[] = ['New York', 'London', 'Paris', 'Tokyo'];
+  @Output() selectedCity: EventEmitter<string> = new EventEmitter<string>();
 
+  selectCity(city: string) {
+    console.log(city);
+    this.selectedCity.emit(city!);
+  }
 }

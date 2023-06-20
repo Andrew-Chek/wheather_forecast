@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ForecastResponse } from 'src/app/interfaces/forecastResponse';
 import { BehaviorSubject } from 'rxjs';
+import { ForecastResponse } from 'src/app/interfaces/ForecastResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +22,9 @@ export class ForecastApiService {
 
   getForecast(city: string) { 
     return this.http.get<ForecastResponse>(`${this.API_URL}&q=${city}`);
+  }
+
+  setForecast(forecast: ForecastResponse) { 
+    this.forecast$.next(forecast);
   }
 }

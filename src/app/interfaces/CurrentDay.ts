@@ -2,7 +2,6 @@ import { Condition } from "./Condition";
 
 export interface CurrentDay { 
     last_updated_epoch: number;
-    last_updated: string;
     temp_c: number;
     temp_f: number;
     is_day: number;
@@ -13,4 +12,5 @@ export interface CurrentDay {
     condition: Condition;
     feelslike_c: number;
     feelslike_f: number;
+    humidity: number;
 }

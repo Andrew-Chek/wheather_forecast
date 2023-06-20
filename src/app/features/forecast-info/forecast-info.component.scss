@@ -1,0 +1,85 @@
+.weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 3px solid var(--input-color);
+
+    &-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 15px;
+    }
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 100%;
+        margin-top: 20px;
+        .buttons {
+            display: flex;
+            padding: 5px;
+            .checkbox {
+                margin: 5px;
+                &-input {
+                    display: none;
+                }
+
+                &-label {
+                    padding: 5px 10px;
+                    border: 1px solid var(--input-color);
+                    border-radius: 15px;
+                    color: var(--text-color);
+                    background-color: white;
+                    transition: .5s all ease;
+                    cursor: pointer;
+                }
+
+                &-label:hover {
+                    color: white;
+                    background-color: var(--text-color);
+                }
+
+                &-input:checked + &-label {
+                    color: white;
+                    background-color: var(--text-color);
+                }
+            }
+        }
+    }
+    &-info {
+        width: 100%;
+        .weather-cloud {
+            display: flex;
+            align-items: center;
+            .cloud-image {
+                width: 50%;
+            }
+            .cloud-text {
+                min-width: 30%;
+                text-align: center;
+                font-size: 32px;
+            }
+        }
+        .temp-info {
+            width: 50%;
+            font: {
+                size: 32px;
+                weight: bold;
+            };
+            text-align: center;
+        }
+        .weather-feels {
+            margin-top: 10px;
+        }
+        .info-pgh {
+            text-align: start;
+            padding: 5px 10px;
+            margin: 3px;
+            font: {
+                size: 18px;
+                weight: bold;
+            };
+        }
+    }
+}

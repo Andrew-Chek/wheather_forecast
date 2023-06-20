@@ -1,1 +1,5 @@
-<app-forecast-info></app-forecast-info>
+<app-dropdown (selectedCity)="getCityForecast($event)"></app-dropdown>
+<main class="main">
+    <app-location class="main-location"></app-location>
+    <app-forecast-info class="main-forecast"></app-forecast-info>
+</main>

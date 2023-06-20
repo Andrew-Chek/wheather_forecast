@@ -1,1 +1,6 @@
-<p>dropdown works!</p>
+<article class="dropdown-container">
+    <select class="dropdown-list" #selectedCities (change)="selectCity(selectedCities.value)">
+        <option value="">Select a city</option>
+        <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+    </select>
+</article>

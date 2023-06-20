@@ -7,10 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { ForecastInfoModule } from './features/forecast-info/forecast-info.module';
+import { LocationComponent } from './features/location/location.component';
+import { LocationModule } from './features/location/location.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,7 +20,8 @@ import { ForecastInfoModule } from './features/forecast-info/forecast-info.modul
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
-    ForecastInfoModule
+    ForecastInfoModule,
+    LocationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

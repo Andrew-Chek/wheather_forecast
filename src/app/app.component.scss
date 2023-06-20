@@ -1,0 +1,12 @@
+.main {
+    display: grid;
+    grid-template-areas: "location forecast";
+    grid-template-columns: .5fr 1fr;
+
+    &-location {
+        grid-area: location;
+    }
+    &-forecast {
+        grid-area: forecast;
+    }
+}
