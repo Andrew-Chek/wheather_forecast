@@ -83,3 +83,38 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) { 
+    .weather {
+        border-left: none;
+    }
+}
+
+@media screen and (max-width: 512px) { 
+    .weather {
+        &-title {
+            font-size: 18px;
+        }
+        &-info {
+            .weather-cloud {
+                .cloud-image {
+                    width: 30%;
+                }
+                .cloud-text {
+                    min-width: 30%;
+                    font-size: 24px;
+                }
+            }
+            .temp-info {
+                width: 50%;
+                font-size: 24px;
+            }
+            .weather-feels {
+                margin-top: 10px;
+            }
+            .info-pgh {
+                font-size: 12px;
+            }
+        }
+    }
+}

@@ -11,6 +11,8 @@ export class ForecastInfoComponent implements OnInit {
   forecast: ForecastResponse = this.apiService.forecast$.value;
   isCheckedCelsius: boolean = false;
   isCheckedMile: boolean = false;
+  mphText = "mph";
+  celsiusText = "°C";
   constructor(private apiService: ForecastApiService) { }
 
   ngOnInit() { 
@@ -21,9 +23,11 @@ export class ForecastInfoComponent implements OnInit {
 
   changeCelsiusFlag(input: HTMLInputElement) { 
     this.isCheckedCelsius = input.checked;
+    this.celsiusText = !this.isCheckedCelsius ? "°C" : "°F";
   }
 
   changeMileFlag(input: HTMLInputElement) { 
     this.isCheckedMile = input.checked;
+    this.mphText = !this.isCheckedMile ? "mph" : "km/h";
   }
 }

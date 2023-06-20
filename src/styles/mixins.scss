@@ -13,10 +13,10 @@
     border-radius: 10px;
 }
 
-@mixin --input-mobile-params {
-    padding: 5px 10px;
+@mixin --btn-params {
+    padding: 16px 20px;
     border: 1px solid var(--input-color);
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 @mixin --error-input-params {

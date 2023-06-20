@@ -1,5 +1,20 @@
-<app-dropdown (selectedCity)="getCityForecast($event)"></app-dropdown>
+<header class="header">
+    <app-dropdown 
+        class="dropdown-container" 
+        (selectedCity)="getCityForecast($event)"
+        [cities]="cities"
+    >
+    </app-dropdown>
+    <span *ngIf="errorDetected" class="error-message">API cannot find any info about your city, so it was deleted from the list</span>
+    <app-button class="btn-container" (openedDialog)="openCityForm($event)"></app-button>
+</header>
 <main class="main">
+    <app-city-form 
+        class="app-form" 
+        (sentCity)="addNewCity($event)"
+        (closedPopup)="openCityForm($event)"
+        [ngClass]="{open__form: visible}"
+    ></app-city-form>
     <app-location class="main-location"></app-location>
     <app-forecast-info class="main-forecast"></app-forecast-info>
 </main>

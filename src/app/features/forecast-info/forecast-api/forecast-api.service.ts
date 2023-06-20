@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { ForecastResponse } from 'src/app/interfaces/ForecastResponse';
@@ -6,10 +6,11 @@ import { ForecastResponse } from 'src/app/interfaces/ForecastResponse';
 @Injectable({
   providedIn: 'root'
 })
-export class ForecastApiService {
+export class ForecastApiService implements OnDestroy{
   KEY = '07b12315c34a46478dc151446231906';
   API_URL = `http://api.weatherapi.com/v1/current.json?key=${this.KEY}`;
   forecast$!: BehaviorSubject<ForecastResponse>;
+  openCityForm: boolean = false;
 
   constructor(private http: HttpClient) { 
     // subscribe to getForecast and set the response to forecast$
@@ -18,6 +19,10 @@ export class ForecastApiService {
     this.getForecast('London').subscribe((forecast) => { 
       this.forecast$.next(forecast);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.forecast$.unsubscribe();
   }
 
   getForecast(city: string) { 

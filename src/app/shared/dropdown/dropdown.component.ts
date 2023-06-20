@@ -10,7 +10,6 @@ export class DropdownComponent {
   @Output() selectedCity: EventEmitter<string> = new EventEmitter<string>();
 
   selectCity(city: string) {
-    console.log(city);
     this.selectedCity.emit(city!);
   }
 }
